@@ -1,3 +1,10 @@
+quickutilities (0.0.8) unreleased; urgency=medium
+
+  * add git-change-commit-time
+  * rename gitfetchandpull to batch-git-fetch-pull
+
+ -- Yaofei <yaofei@yaofei-debian>  Tue, 28 Jul 2026 22:03:51 +0800
+
 quickutilities (0.0.7) unreleased; urgency=medium
 
   * add batch-tar-permission-owner

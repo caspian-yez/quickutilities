@@ -7,6 +7,7 @@ batch-archive-git-repo                          usr/bin
 batch-avi-test                                  usr/bin
 batch-dos2unix                                  usr/bin
 batch-gbk2utf-8-convert                         usr/bin
+batch-git-fetch-pull                            usr/bin
 batch-git-gc                                    usr/bin
 batch-hardlink.py                               usr/bin
 batch-jpg-test                                  usr/bin
@@ -28,9 +29,9 @@ currentdir-sha256sum                            usr/bin
 dmtf-std-update.py                              usr/bin
 extract-html-links.py                           usr/bin
 file-name-replace-string                        usr/bin
+git-change-commit-time                          usr/bin
 gitallbranch                                    usr/bin
 gitallbranchpull                                usr/bin
-gitfetchandpull                                 usr/bin
 iconv-gbk2utf-8                                 usr/bin
 iconv-utf-16toutf-8                             usr/bin
 jpg-exif-timestamp.py                           usr/bin
