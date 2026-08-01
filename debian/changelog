@@ -1,3 +1,9 @@
+quickutilities (0.0.9) unreleased; urgency=medium
+
+  * use the most compatiable GB18030 for all chinese GB encodings to UTF8
+
+ -- Yaofei <yaofei@yaofei-debian>  Sat, 1 Aug 2026 21:58:46 +0800
+
 quickutilities (0.0.8) unreleased; urgency=medium
 
   * add git-change-commit-time
