@@ -22,9 +22,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-create_time="$(stat -c %y "$1")"
-# echo "$create_time"
-iconv -f GBK -t UTF-8 "$1" -o "$1.temp"
-mv "$1.temp" "$1"
-dos2unix "$1"
-touch -d "$create_time" "$1"
+for i in *.txt
+do
+    iconv-gb2utf-8 "$i"
+done
