@@ -1,23 +1,37 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT
 
-import sys
 import os
+import time
+import signal
 import sqlite3
+import argparse
 import send2trash
 
+sigint = False
 
-def main():
-    print("backup path: {}".format(sys.argv[1]))
 
-    base_dir = sys.argv[1]
-    connection = sqlite3.connect(os.path.join(base_dir, "Manifest.db"))
+def signal_handler(sig, frame):
+    print("SIGINT")
+    global sigint
+    sigint = True
+
+
+def main(args):
+    print("backup path: {}".format(args.path))
+    print("trash or permanent delete: {}".format(args.trash))
+
+    signal.signal(signal.SIGINT, signal_handler)
+
+    connection = sqlite3.connect(os.path.join(args.path, "Manifest.db"))
     connection.row_factory = sqlite3.Row
 
     cursor = connection.cursor()
     cursor.execute('SELECT * FROM "Files"')
 
     rows = cursor.fetchall()
+
+    database_touched = False
 
     # CREATE TABLE Files (
     # fileID TEXT PRIMARY KEY,
@@ -27,24 +41,39 @@ def main():
     # file BLOB
     # )
     for row in rows:
-        if "SMS" in row["relativePath"]:
+        if sigint:
+            break
+        if "SMS" in row["relativePath"] and 1 == row["flags"]:
             continue
         else:
-            try:
-                path_to_delete = os.path.join(
-                    base_dir, row["fileID"][0:2], row["fileID"]
-                )
-                send2trash.send2trash(path_to_delete)
-                cursor.execute(
-                    'DELETE FROM "Files" WHERE "fileID" = \'{}\''.format(row["fileID"])
-                )
-            except FileNotFoundError:
-                print("{} Not Found.".format(path_to_delete))
+            path_to_delete = os.path.join(args.path, row["fileID"][0:2], row["fileID"])
+            if os.path.exists(path_to_delete):
+                if 0 == args.trash:
+                    os.remove(path_to_delete)
+                else:
+                    send2trash.send2trash(path_to_delete)
+                    time.sleep(0.02)
+            cursor.execute(
+                'DELETE FROM "Files" WHERE "fileID" = \'{}\''.format(row["fileID"])
+            )
+            database_touched = True
 
-    cursor.execute("COMMIT")
+    if database_touched:
+        cursor.execute("COMMIT")
 
     connection.close()
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    # define each option with: parser.add_argument
+    parser.add_argument("-p", "--path", required=True, help="iPhone backup path")
+    parser.add_argument(
+        "-t",
+        "--trash",
+        required=True,
+        type=int,
+        help="Trash file or permanent delete, 0 is permanent delete, otherwise trash",
+    )
+    args = parser.parse_args()  # automatically looks at sys.argv
+    main(args)
