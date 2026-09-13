@@ -1,3 +1,9 @@
+quickutilities (0.0.10) unreleased; urgency=medium
+
+  * add wait-qbittorrent-shutdown.py
+
+ -- Yaofei <yaofei@yaofei-debian>  Sun, 13 Sep 2026 11:45:05 +0800
+
 quickutilities (0.0.9) unreleased; urgency=medium
 
   * use the most compatiable GB18030 for all chinese GB encodings to UTF8
