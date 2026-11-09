@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+# SPDX-License-Identifier: MIT
+
+for i in *.xz
+do
+    xz -vt "$i"
+done
