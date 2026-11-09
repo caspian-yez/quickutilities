@@ -16,6 +16,7 @@ batch-msxmldocs-test                            usr/bin
 batch-rar-test                                  usr/bin
 batch-sha1sum-rename                            usr/bin
 batch-tar-permission-owner                      usr/bin
+batch-tarxz-extract                             usr/bin
 batch-tarxz-test                                usr/bin
 batch-torrent-rename                            usr/bin
 batch-zip-test                                  usr/bin
