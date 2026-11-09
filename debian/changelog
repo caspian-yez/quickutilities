@@ -1,3 +1,10 @@
+quickutilities (0.0.11) unreleased; urgency=medium
+
+  * remove iphone-backup-clean-non-sms-files.py
+  * old-cn-std-book-number.py: total refactoring
+
+ -- Yaofei <yaofei@yaofei-debian>  Mon, 9 Nov 2026 21:03:49 +0800
+
 quickutilities (0.0.10) unreleased; urgency=medium
 
   * add wait-qbittorrent-shutdown.py
