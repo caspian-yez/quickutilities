@@ -16,6 +16,7 @@ Depends:
 	python3-opencv,
 	python3-parse,
 	python3-pyzbar,
-	python3-requests
+	python3-requests,
+	python3-xmltodict
 Description: quickutilities
  some quick utilities
