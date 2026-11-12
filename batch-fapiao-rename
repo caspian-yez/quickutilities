@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
+import os
+import xmltodict
+
+
+def process_xml(filename: str):
+    fp = open(filename, "r", encoding="utf-8")
+    data = xmltodict.parse(fp.read())
+    fp.close()
+    seller_id = data["EInvoice"]["EInvoiceData"]["SellerInformation"]["SellerIdNum"]
+    date = data["EInvoice"]["TaxSupervisionInfo"]["IssueTime"]
+    fapiao_id = data["EInvoice"]["TaxSupervisionInfo"]["InvoiceNumber"]
+    print(
+        'file-name-replace-string "{}" "{} {} {}"'.format(
+            fapiao_id, seller_id, date, fapiao_id
+        )
+    )
+
+
+def main():
+    files = os.listdir()
+    for file in files:
+        if file.endswith(".xml"):
+            process_xml(file)
+
+
+if __name__ == "__main__":
+    main()

@@ -6,6 +6,7 @@ batch-7z2tarxz                                  usr/bin
 batch-archive-git-repo                          usr/bin
 batch-avi-test                                  usr/bin
 batch-dos2unix                                  usr/bin
+batch-fapiao-rename                             usr/bin
 batch-gb2utf-8-convert                          usr/bin
 batch-git-fetch-pull                            usr/bin
 batch-git-gc                                    usr/bin
