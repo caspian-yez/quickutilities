@@ -46,7 +46,6 @@ renamet.py                                      usr/bin
 sha1sum-rename                                  usr/bin
 show-kernel-alg.py                              usr/bin
 tar-permission-owner.py                         usr/bin
-tardir2xz                                       usr/bin
 timestamp-from-file-name.py                     usr/bin
 unzipmbcs.py                                    usr/bin
 wait-qbittorrent-shutdown.py                    usr/bin
