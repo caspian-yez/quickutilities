@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
 # SPDX-License-Identifier: MIT
 
-for i in *.tar.xz
-do
-    tar -tvf "$i"
+for i in *.tar.xz; do
+	tar -tvf "$i"
 done
