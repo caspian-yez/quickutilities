@@ -1,3 +1,10 @@
+quickutilities (0.0.12) unreleased; urgency=medium
+
+  * code format
+  * code refactoring
+
+ -- Yaofei <yaofei@yaofei-debian>  Fri, 13 Nov 2026 13:21:50 +0800
+
 quickutilities (0.0.11) unreleased; urgency=medium
 
   * remove iphone-backup-clean-non-sms-files.py
