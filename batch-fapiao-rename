@@ -16,6 +16,7 @@ def process_xml(filename: str):
             fapiao_id, seller_id, date, fapiao_id
         )
     )
+    os.rename(filename, "{} {} {}.xml".format(fapiao_id, seller_id, date, fapiao_id))
 
 
 def main():
