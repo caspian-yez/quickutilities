@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+# SPDX-License-Identifier: MIT
+
+for i in *.zip; do
+	unzip "$i"
+done

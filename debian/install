@@ -20,6 +20,7 @@ batch-tar-permission-owner                      usr/bin
 batch-tarxz-extract                             usr/bin
 batch-tarxz-test                                usr/bin
 batch-torrent-rename                            usr/bin
+batch-zip-decompress                            usr/bin
 batch-xz-test                                   usr/bin
 batch-zip-test                                  usr/bin
 check-isbn.py                                   usr/bin
