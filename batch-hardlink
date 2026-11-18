@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+# SPDX-License-Identifier: MIT
+
+echo "$1"
+find "$1" -type f -exec ln {} \;

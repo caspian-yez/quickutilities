@@ -10,7 +10,7 @@ batch-fapiao-rename                             usr/bin
 batch-gb2utf-8-convert                          usr/bin
 batch-git-fetch-pull                            usr/bin
 batch-git-gc                                    usr/bin
-batch-hardlink.py                               usr/bin
+batch-hardlink                                  usr/bin
 batch-jpg-test                                  usr/bin
 batch-md2docx                                   usr/bin
 batch-msxmldocs-test                            usr/bin
